@@ -1,0 +1,117 @@
+// PC
+.container{
+    opacity: 1;
+}
+.section-produto{
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin-top: 50px;
+
+    .produto{
+        display: flex;
+        width: 800px;
+        height: 400px;
+
+        .imagens-container{
+            width: 20%;
+            display: grid;
+
+            .img-box{
+                width: 100%;
+                height: 100%;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .imagem-principal-container{
+            width: 70%;
+        }
+
+        .produto-price{
+            margin-left: 20px;
+            button{
+                border: none;
+                padding: 10px 15px;
+                margin-top: 10px;
+                background-color: rgb(241, 218, 222);
+
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+
+    }
+    .description{
+        width: 70%;
+    }
+
+    .d1{
+        margin-top: 50px;
+    }
+
+    .d2{
+        margin-bottom: 50px;
+    }
+}
+
+// MOBILE 
+
+@media (max-width: 420px){
+    .section-produto{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .produto{
+            width: 300px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            .imagem-principal-container{
+                width: 100%;
+                height: 200px;
+
+                .imagem-principal{
+                    height: 100%;
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+
+                }
+            }
+
+            .produto-price{
+                button{
+                    border: none;
+                    padding: 5px 10px;
+                    background-color: rgb(238, 226, 228);
+
+                    a{
+                        text-decoration: none;
+                        color: black;
+                    }
+                }
+            }
+
+        }
+
+        .description{
+            width:70%;
+            font-size: 10px;
+        }
+
+        .d2{
+            padding-bottom: 30px;
+        }
+    }
+}
