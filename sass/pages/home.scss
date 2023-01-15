@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+// EDITANDO FEED DOS PRODUTOS
+
+main{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    .feed-produtos{
+        position: relative;
+        width: 70%;
+        margin-bottom: 100px;
+
+        // SPAN
+        span{
+            display: flex;
+            margin: 20px 0px;
+
+            p{
+                padding: 5px 10px;
+                background-color: #fff7f8;
+            }
+        }
+
+        .left, .right{
+            cursor: pointer;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 250px;
+            width: 60px;
+            position: absolute;
+            p{
+                font-size: 25px;
+                opacity: 0.2;
+            }
+        }
+
+        .left{
+            left: 0;
+            background: linear-gradient(to left, transparent, rgb(255, 255, 255));
+        }
+
+        .right{
+            position: absolute;
+            right: 0;
+            background: linear-gradient(to right, transparent, rgb(255, 255, 255));
+        }
+        
+        .bolos, .salgados{
+            display: flex;
+            justify-content: space-around;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            scrollbar-width: none;
+
+
+            .card{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                width: 200px;
+                height: 250px;
+                scroll-snap-align: center;
+                scroll-snap-stop: always;
+                padding-left: 2px;
+                
+
+                a{
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                }
+                
+
+                // TEXTO DE CARD
+                p:nth-child(2){
+                    margin-top: 20px;
+                    font-size: 10px;
+                }
+                p:nth-child(3){
+                    font-size: 10px;
+                    font-weight: bolder;
+                }
+                button{
+                    border-radius: 4px;
+                    margin-top: 10px;
+                    background-color: #faecee;
+                    width: 100%;
+                    border: none;
+                    padding: 5px;
+                    cursor: pointer;
+
+                    a{
+                        text-decoration: none;
+                        color: black;
+                    }
+
+                    &:hover{
+                        background-color: #e9ced2;
+                    }
+                }
+
+                // IMAGEM DO CARD
+                .pimg{
+                    width: 130px;
+                    height: 100%;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+
+                .ovo-img{
+                    background-image: url("../../imagens/produtos/ovo-pascoa.png");
+                }
+                .ovo2-img{
+                    background-image: url("../../imagens/produtos/ovo-pascoa2.png");
+                }
+                .ovo3-img{
+                    background-image: url("../../imagens/produtos/ovo-pascoa3.png");
+                }
+                .ovo4-img{
+                    background-image: url("../../imagens/produtos/ovo-pascoa4.png");
+                }
+                .brigadeiro-img{
+                    background-image: url("../../imagens/produtos/brigadeiro.png");
+                }
+                .brownie-img{
+                    background-image: url("../../imagens/produtos/brownie.png");
+                }
+                .salgados-img{
+                    background-image: url("../../imagens/produtos/salgado.png");
+                }
+                .pasteis-img{
+                    background-image: url("../../imagens/produtos/pasteis.png");
+                }
+                .bolo-img{
+                    background-image: url("../../imagens/produtos/bolo.png");
+                }
+                .pote-img{
+                    background-image: url("../../imagens/produtos/pote.png");
+                }
+                .torta-img{
+                    background-image: url("../../imagens/produtos/torta.png");
+                }
+                .pao-img{
+                    background-image: url("../../imagens/produtos/pao.png");
+                }
+                .enroladinho-img{
+                    background-image: url("../../imagens/produtos/enroladinho.png");
+                }
+                .biscoito-img{
+                    background-image: url("../../imagens/produtos/biscoito.png");
+                }
+                .cupcake-img{
+                    background-image: url("../../imagens/produtos/cupcake.png");
+                }
+                .pudim-img{
+                    background-image: url("../../imagens/produtos/pudim.png");
+                }
+                .donuts-img{
+                    background-image: url("../../imagens/produtos/donuts.png");
+                }
+
+
+            }
+        }
+    
+    
+    }
+}
+
+
+// EDITANDO FOOTER
+
+footer{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    font-size: 9px;
+    padding: 20px 0;
+
+    .atendimento p:nth-child(1){
+        font-weight: bolder;
+        margin-bottom: 5px;
+    }
+
+    .redes-sociais {
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:nth-child(1){
+            font-weight: bolder;
+            margin-bottom: 5px;
+        }
+
+        .instagram-icon, .facebook-icon{
+            display: flex;
+            gap: 10px;
+            padding: 5px 0px;
+        }
+        .instagram-icon img, .facebook-icon img{
+            width: 15px;
+            height: 13px;
+            filter: invert(1);
+        }
+    }
+}
+
+
+
+// MOBILE ----------------------------------------------------------------------------
+
+@media (max-width: 420px){
+    .navbar{
+        justify-content: space-between;
+        padding: 10px 20px;
+        nav{
+            display: none;
+        }
+
+        .menu-icon{
+            display: block;
+
+            img{
+                width: 30px;
+            }
+        }
+
+       
+    }
+
+    // CLASE QUE APLICA DO DISPLAY BLOCK
+    .open{
+        display: block;
+    }
+
+    // MENU MOBILE
+    .mobile-menu{
+
+        .mobile-itens{
+            padding: 10px 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+
+            a{
+                padding: 5px;
+                background-color: #fff7f8;
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+
+    // EDITANDO SLIDER
+
+    section{
+        height: 200px;
+
+        .slider{
+            width: 100%;
+        }
+    }
+
+    // EDITANDO FEED DE PRODUTOS
+
+    main{
+        .feed-produtos{
+            width: 100%;
+            margin-bottom: 0;
+            .bolos, .salgados{
+                margin: 0px 10px;
+                justify-content: flex-start;
+                scroll-snap-align: start;
+                .card{
+                    scroll-snap-align: start;
+                }
+            }
+
+            .salgados{
+                width: 100vw;
+                margin: 0;
+                background-color: hsl(340, 27%, 98%);
+                padding-bottom: 60px;
+
+                .card button{
+                    background-color: rgb(249, 237, 244);
+                    
+                    a{
+                        color: #483f41;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    //EDITANDO FOOTER
+
+    footer{
+        padding: 40px 0px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+}
+

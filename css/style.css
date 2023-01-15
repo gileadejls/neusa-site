@@ -1,0 +1,483 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+}
+
+.modal-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  animation: modalAnimation 1s;
+}
+.modal-container .modal {
+  width: 400px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 2px 2px 100px black;
+}
+.modal-container .modal p {
+  color: black;
+}
+.modal-container .modal p:nth-child(1) {
+  font-weight: bolder;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.modal-container .modal p:nth-child(2) {
+  padding-top: 5px;
+}
+.modal-container .modal p:nth-child(3) {
+  padding-bottom: 10px;
+}
+.modal-container .modal .close {
+  padding-top: 10px;
+}
+.modal-container .modal .close button {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px 10px;
+  outline: none;
+  color: rgb(0, 0, 0);
+  border: none;
+  background-color: rgb(224, 185, 213);
+  font-weight: 500;
+}
+
+.closeModal {
+  display: none;
+}
+
+@keyframes modalAnimation {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -60px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  padding: 10px 0px;
+  border-bottom: 1px solid #bebebe;
+}
+.navbar .logo {
+  width: 40px;
+  height: 40px;
+  background-image: url("../../imagens/logo/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.navbar .menu-icon {
+  display: none;
+}
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.navbar nav a {
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+}
+.navbar nav a:hover {
+  border-bottom: 1px solid #bebebe;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 450px;
+}
+section .slider {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  width: 70%;
+  height: 100%;
+}
+section .slider img {
+  transition: 1s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+main .feed-produtos {
+  position: relative;
+  width: 70%;
+  margin-bottom: 100px;
+}
+main .feed-produtos span {
+  display: flex;
+  margin: 20px 0px;
+}
+main .feed-produtos span p {
+  padding: 5px 10px;
+  background-color: #fff7f8;
+}
+main .feed-produtos .left, main .feed-produtos .right {
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 60px;
+  position: absolute;
+}
+main .feed-produtos .left p, main .feed-produtos .right p {
+  font-size: 25px;
+  opacity: 0.2;
+}
+main .feed-produtos .left {
+  left: 0;
+  background: linear-gradient(to left, transparent, rgb(255, 255, 255));
+}
+main .feed-produtos .right {
+  position: absolute;
+  right: 0;
+  background: linear-gradient(to right, transparent, rgb(255, 255, 255));
+}
+main .feed-produtos .bolos, main .feed-produtos .salgados {
+  display: flex;
+  justify-content: space-around;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  scrollbar-width: none;
+}
+main .feed-produtos .bolos .card, main .feed-produtos .salgados .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 200px;
+  height: 250px;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  padding-left: 2px;
+}
+main .feed-produtos .bolos .card a, main .feed-produtos .salgados .card a {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+main .feed-produtos .bolos .card p:nth-child(2), main .feed-produtos .salgados .card p:nth-child(2) {
+  margin-top: 20px;
+  font-size: 10px;
+}
+main .feed-produtos .bolos .card p:nth-child(3), main .feed-produtos .salgados .card p:nth-child(3) {
+  font-size: 10px;
+  font-weight: bolder;
+}
+main .feed-produtos .bolos .card button, main .feed-produtos .salgados .card button {
+  border-radius: 4px;
+  margin-top: 10px;
+  background-color: #faecee;
+  width: 100%;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+main .feed-produtos .bolos .card button a, main .feed-produtos .salgados .card button a {
+  text-decoration: none;
+  color: black;
+}
+main .feed-produtos .bolos .card button:hover, main .feed-produtos .salgados .card button:hover {
+  background-color: #e9ced2;
+}
+main .feed-produtos .bolos .card .pimg, main .feed-produtos .salgados .card .pimg {
+  width: 130px;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main .feed-produtos .bolos .card .ovo-img, main .feed-produtos .salgados .card .ovo-img {
+  background-image: url("../../imagens/produtos/ovo-pascoa.png");
+}
+main .feed-produtos .bolos .card .ovo2-img, main .feed-produtos .salgados .card .ovo2-img {
+  background-image: url("../../imagens/produtos/ovo-pascoa2.png");
+}
+main .feed-produtos .bolos .card .ovo3-img, main .feed-produtos .salgados .card .ovo3-img {
+  background-image: url("../../imagens/produtos/ovo-pascoa3.png");
+}
+main .feed-produtos .bolos .card .ovo4-img, main .feed-produtos .salgados .card .ovo4-img {
+  background-image: url("../../imagens/produtos/ovo-pascoa4.png");
+}
+main .feed-produtos .bolos .card .brigadeiro-img, main .feed-produtos .salgados .card .brigadeiro-img {
+  background-image: url("../../imagens/produtos/brigadeiro.png");
+}
+main .feed-produtos .bolos .card .brownie-img, main .feed-produtos .salgados .card .brownie-img {
+  background-image: url("../../imagens/produtos/brownie.png");
+}
+main .feed-produtos .bolos .card .salgados-img, main .feed-produtos .salgados .card .salgados-img {
+  background-image: url("../../imagens/produtos/salgado.png");
+}
+main .feed-produtos .bolos .card .pasteis-img, main .feed-produtos .salgados .card .pasteis-img {
+  background-image: url("../../imagens/produtos/pasteis.png");
+}
+main .feed-produtos .bolos .card .bolo-img, main .feed-produtos .salgados .card .bolo-img {
+  background-image: url("../../imagens/produtos/bolo.png");
+}
+main .feed-produtos .bolos .card .pote-img, main .feed-produtos .salgados .card .pote-img {
+  background-image: url("../../imagens/produtos/pote.png");
+}
+main .feed-produtos .bolos .card .torta-img, main .feed-produtos .salgados .card .torta-img {
+  background-image: url("../../imagens/produtos/torta.png");
+}
+main .feed-produtos .bolos .card .pao-img, main .feed-produtos .salgados .card .pao-img {
+  background-image: url("../../imagens/produtos/pao.png");
+}
+main .feed-produtos .bolos .card .enroladinho-img, main .feed-produtos .salgados .card .enroladinho-img {
+  background-image: url("../../imagens/produtos/enroladinho.png");
+}
+main .feed-produtos .bolos .card .biscoito-img, main .feed-produtos .salgados .card .biscoito-img {
+  background-image: url("../../imagens/produtos/biscoito.png");
+}
+main .feed-produtos .bolos .card .cupcake-img, main .feed-produtos .salgados .card .cupcake-img {
+  background-image: url("../../imagens/produtos/cupcake.png");
+}
+main .feed-produtos .bolos .card .pudim-img, main .feed-produtos .salgados .card .pudim-img {
+  background-image: url("../../imagens/produtos/pudim.png");
+}
+main .feed-produtos .bolos .card .donuts-img, main .feed-produtos .salgados .card .donuts-img {
+  background-image: url("../../imagens/produtos/donuts.png");
+}
+
+footer {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  color: white;
+  font-size: 9px;
+  padding: 20px 0;
+}
+footer .atendimento p:nth-child(1) {
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+footer .redes-sociais a {
+  text-decoration: none;
+  color: white;
+}
+footer .redes-sociais a:nth-child(1) {
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+footer .redes-sociais .instagram-icon, footer .redes-sociais .facebook-icon {
+  display: flex;
+  gap: 10px;
+  padding: 5px 0px;
+}
+footer .redes-sociais .instagram-icon img, footer .redes-sociais .facebook-icon img {
+  width: 15px;
+  height: 13px;
+  filter: invert(1);
+}
+
+@media (max-width: 420px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  .navbar nav {
+    display: none;
+  }
+  .navbar .menu-icon {
+    display: block;
+  }
+  .navbar .menu-icon img {
+    width: 30px;
+  }
+  .open {
+    display: block;
+  }
+  .mobile-menu .mobile-itens {
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .mobile-menu .mobile-itens a {
+    padding: 5px;
+    background-color: #fff7f8;
+    text-decoration: none;
+    color: black;
+  }
+  section {
+    height: 200px;
+  }
+  section .slider {
+    width: 100%;
+  }
+  main .feed-produtos {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  main .feed-produtos .bolos, main .feed-produtos .salgados {
+    margin: 0px 10px;
+    justify-content: flex-start;
+    scroll-snap-align: start;
+  }
+  main .feed-produtos .bolos .card, main .feed-produtos .salgados .card {
+    scroll-snap-align: start;
+  }
+  main .feed-produtos .salgados {
+    width: 100vw;
+    margin: 0;
+    background-color: hsl(340deg, 27%, 98%);
+    padding-bottom: 60px;
+  }
+  main .feed-produtos .salgados .card button {
+    background-color: rgb(249, 237, 244);
+  }
+  main .feed-produtos .salgados .card button a {
+    color: #483f41;
+  }
+  footer {
+    padding: 40px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+}
+.container {
+  opacity: 1;
+}
+
+.section-produto {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin-top: 50px;
+}
+.section-produto .produto {
+  display: flex;
+  width: 100%;
+  height: 400px;
+}
+.section-produto .produto .imagens-container {
+  width: 20%;
+  display: grid;
+}
+.section-produto .produto .imagens-container .img-box {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.section-produto .produto .imagem-principal-container {
+  width: 70%;
+}
+.section-produto .produto .produto-price {
+  margin-left: 20px;
+}
+.section-produto .produto .produto-price button {
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  background-color: rgb(241, 218, 222);
+}
+.section-produto .produto .produto-price button a {
+  text-decoration: none;
+  color: black;
+}
+.section-produto .description {
+  width: 70%;
+}
+.section-produto .d1 {
+  margin-top: 50px;
+}
+.section-produto .d2 {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 420px) {
+  .section-produto {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .section-produto .produto {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .section-produto .produto .imagem-principal-container {
+    width: 100%;
+    height: 200px;
+  }
+  .section-produto .produto .imagem-principal-container .imagem-principal {
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .section-produto .produto .produto-price button {
+    border: none;
+    padding: 5px 10px;
+    background-color: rgb(238, 226, 228);
+  }
+  .section-produto .produto .produto-price button a {
+    text-decoration: none;
+    color: black;
+  }
+  .section-produto .description {
+    width: 70%;
+    font-size: 10px;
+  }
+  .section-produto .d2 {
+    padding-bottom: 30px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
